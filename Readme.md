@@ -40,16 +40,16 @@ A deterministic, single-cycle-throughput (`II = 1`) hardware Least Squares (LSE)
 * **Resource Footprint:** **`6 / 80` DSPs (`7%`)**, `6 / 120` BRAMs (`5%`), `2,787` FFs (`7%`), and `2,925` LUTs (`16%`).
 * **AXI Interfaces:** `s_axi_axi_gp1_control` (11-bit address / 32-bit data) + 32-bit `adc_stream_V` and `dac_stream_V` AXI4-Stream ports.
 
-![matrix_mul_fpga Synthesis Report](assets/hls_lsq_summary.png)
-![matrix_mul_fpga Interface Report](assets/hls_lsq_interface.png)
+![matrix_mul_fpga Synthesis Report](assets/vitis_synthesis_lsq_report.png)
+![matrix_mul_fpga Interface Report](assets/vitis_lsq_ip_rtl_ports.png)
 
 ### Fractional Multi-Waveform Synthesizer (`wave_generator_module`)
 * **Timing & Throughput:** `7.177 ns` estimated clock vs. `8.00 ns` target (`125 MHz`), `3`-cycle (`24.000 ns`) latency, **`II = 1` (`125 MSPS`)**.
 * **Resource Footprint:** **`0 / 80` DSPs (`0%`)**, `2 / 120` BRAMs (`1%`), `438` FFs (`1%`), and `630` LUTs (`3%`).
 * **AXI Interfaces:** `s_axi_axi_gp1_control` (11-bit address / 32-bit data) + 32-bit `dac_stream_V` AXI4-Stream port.
 
-![wave_generator_module Synthesis Report](assets/hls_wavegen_summary.png)
-![wave_generator_module Interface Report](assets/hls_wavegen_interface.png)
+![wave_generator_module Synthesis Report](assets/vitis_synthesis_report_wave_generator.png)
+![wave_generator_module Interface Report](assets/vitis_wave_generator_ip_rtl_ports.png)
 
 ---
 
@@ -61,12 +61,12 @@ Full place-and-route results with both IP cores, AXI interconnects, and Red Pita
 * **Post-Implementation Utilization:** **`6 / 80` DSP48E1 (`7.50%`)**, `4 / 60` BRAMs (`6.67%`), `4,889` LUTs (`27.78%`), `503` LUTRAM (`8.38%`), and `7,862` FFs (`22.34%`).
 * **Thermal & Power:** **`1.786 W`** total on-chip power (`45.8 °C` junction temperature, `39.4 °C` thermal margin).
 
-![Vivado Project Summary](assets/vivado_project_summary.png)
+![Vivado Project Summary](assets/vivado_project_report.png)
 
 
 ## Full SoC Post-Implementation Summary (`red_pitaya_top`)
 
-![Vivado Utilization Table](assets/vivado_utilization_table.png)
+![Vivado Utilization Table](assets/vivado_post_implementation_resource.png)
 
 | Resource | Used | Available | Utilization |
 | :--- | :---: | :---: | :---: |
